@@ -1,0 +1,225 @@
+
+<body>
+	<main class="main-body">
+		<nav id="navbar">
+			<header>Think Java: How to Think Like a Computer Scientist
+</header>    
+
+<ul>
+<li><a class="nav-link" href="#section_1"> Programming Languages </a></li>
+<li><a class="nav-link" href="#section_2"> The Hello World Program</a></li>
+<li><a class="nav-link" href="#section_3"> Displaying Strings </a></li>
+<li><a class="nav-link" href="#section_4"> Escape Sequences</a></li>
+<li><a class="nav-link" href="#section_5"> Formatting Code </a></li>
+</ul>
+</nav>
+
+    
+<main id="main-doc">
+<section class="main-section" id="section_1">
+  <header>Programming Languages</header>  
+  <p><code> { public static void main(String[] args) { </code></p>  
+  <p> The programming language you will learn is Java, which is a high-level language. Other high-level languages you may have heard of include Python, C
+and C++, Ruby, and JavaScript.
+Before they can run, programs in high-level languages have to be translated
+into a low-level language, also called “machine language”. This translation
+takes some time, which is a small disadvantage of high-level languages. But
+high-level languages have two advantages:
+ It is much easier to program in a high-level language. Programs take
+less time to write, they are shorter and easier to read, and they are more
+likely to be correct.
+ High-level languages are portable, meaning they can run on different
+kinds of computers with few or no modifications. Low-level programs
+can only run on one kind of computer, and have to be rewritten to run
+on another.
+Two kinds of programs translate high-level languages into low-level languages:
+interpreters and compilers. An interpreter reads a high-level program and
+executes it, meaning that it does what the program says. It processes the program a little at a time, alternately reading lines and performing computations.
+Figure 1.1 shows the structure of an interpreter.
+In contrast, a compiler reads the entire program and translates it completely
+before the program starts running. In this context, the high-level program
+4 Chapter 1 The way of the program
+Figure 1.1: How interpreted languages are executed.
+is called the source code, and the translated program is called the object
+code or the executable. Once a program is compiled, you can execute it
+repeatedly without further translation. As a result, compiled programs often
+run faster than interpreted programs.
+Java is both compiled and interpreted. Instead of translating programs directly
+into machine language, the Java compiler generates byte code. Similar to
+machine language, byte code is easy and fast to interpret. But it is also
+portable, so it is possible to compile a Java program on one machine, transfer
+the byte code to another machine, and run the byte code on the other machine.
+The interpreter that runs byte code is called a “Java Virtual Machine” (JVM).
+Figure 1.2: The process of compiling and running a Java program.
+Figure 1.2 shows the steps of this process. Although it might seem complicated,
+these steps are automated for you in most program development environments.
+Usually you only have to press a button or type a single command to compile
+and run your program. On the other hand, it is important to know what steps
+are happening in the background, so if something goes wrong you can figure
+out what it is.</p>  
+  <li><a href="https://greenteapress.com/thinkjava6/thinkjava.pdf" target="_blank">More info here!</a> 
+</li>
+  
+<section class="main-section" id="section_2">
+  <header>The Hello World Program</header>  
+  <p><code> public class HelloWorld { <br>
+    public static void main(String[] args) { <br>
+        // Prints "Hello, World" to the terminal window. <br>
+        System.out.println("Hello, World"); <br>
+    } <br>
+
+}</code></p>  
+  <p>Traditionally, the first program you write when learning a new programming
+language is called the hello world program. All it does is display the words
+“Hello, World!” on the screen. In Java, it looks like this:
+1.4 The hello world program 5
+public class Hello {
+public static void main(String[] args) {
+// generate some simple output
+System.out.println("Hello, World!");
+}
+}
+When this program runs it displays:
+Hello, World!
+Notice that the output does not include the quotation marks.
+Java programs are made up of class and method definitions, and methods are
+made up of statements. A statement is a line of code that performs a basic
+operation. In the hello world program, this line is a print statement that
+displays a message on the screen:
+System.out.println("Hello, World!");
+System.out.println displays results on the screen; the name println stands
+for “print line”. Confusingly, print can mean both “display on the screen” and
+“send to the printer”. In this book, we’ll try to say “display” when we mean
+output to the screen. Like most statements, the print statement ends with a
+semicolon (;).
+Java is “case-sensitive”, which means that uppercase and lowercase are not the
+same. In this example, System has to begin with an uppercase letter; system
+and SYSTEM won’t work.
+A method is a named sequence of statements. This program defines one
+method named main:
+public static void main(String[] args)
+The name and format of main is special: when the program runs, it starts at
+the first statement in main and ends when it finishes the last statement. Later,
+we will see programs that define more than one method.
+A class is a collection of methods. This program defines a class named Hello.
+You can give a class any name you like, but it is conventional to start with a
+6 Chapter 1 The way of the program
+capital letter. The name of the class has to match the name of the file it is in,
+so this class has to be in a file named Hello.java.
+Java uses squiggly braces ({ and }) to group things together. In Hello.java,
+the outermost braces contain the class definition, and the inner braces contain
+the method definition.
+The line that begins with two slashes (//) is a comment, which is a bit of
+English text that explains the code. When the compiler sees //, it ignores
+everything from there until the end of the line. Comments have no effect on
+the execution of the program, but they make it easier for other programmers
+(and your future self) to understand what you meant to do.</p>    
+  <li><a href="https://greenteapress.com/thinkjava6/thinkjava.pdf" target="_blank">More info here! </a></li>
+  
+<section class="main-section" id="section_3">
+  <header>Displaying Strings</header>  
+  <p><code>
+    public class Hello {<br>
+public static void main(String[] args) {<br>
+// generate some simple output<br>
+System.out.println("Hello, World!"); // first line<br>
+System.out.println("How are you?"); // another line<br>
+}<br>
+} <br>
+  </code></p>  
+  <p>You can put as many statements as you like in main. For example, to display
+more than one line of output:
+public class Hello {
+public static void main(String[] args) {
+// generate some simple output
+System.out.println("Hello, World!"); // first line
+System.out.println("How are you?"); // another line
+}
+}
+As this example shows, you can put comments at the end of a line as well as
+on lines all by themselves.
+Phrases that appear in quotation marks are called strings, because they contain a sequence of “characters” strung together. Characters can be letters,
+numbers, punctuation marks, symbols, spaces, tabs, etc.
+System.out.println appends a special character, called a newline, that
+moves to the beginning of the next line. If you don’t want a newline at the
+end, you can use print instead of println:
+1.6 Escape sequences 7
+public class Goodbye {
+public static void main(String[] args) {
+System.out.print("Goodbye, ");
+System.out.println("cruel world");
+}
+}
+In this example, the first statement does not add a newline, so the output
+appears on a single line as Goodbye, cruel world. Notice that there is a
+space at the end of the first string, which appears in the output.</p>    
+  <li><a href="https://greenteapress.com/thinkjava6/thinkjava.pdf" target="_blank">More info here! <a/></li>
+  
+<section class="main-section" id="section_4">
+  <header>Escape Sequences</header>  
+  <p><code>System.out.println("She said \"Hello!\" to me.");</code></p>  
+  <p>It is possible to display multiple lines of output in just one line of code. You
+just have to tell Java where to put the line breaks.
+public class Hello {
+public static void main(String[] args) {
+System.out.print("Hello!\nHow are you doing?\n");
+}
+}
+The output is two lines, each ending with a newline character:
+Hello!
+How are you doing?
+The \n is an escape sequence, which is a sequence of characters that represents a special character. The backslash allows you to “escape” the string’s
+literal interpretation. Notice there is no space between \n and How. If you add
+a space there, there will be a space at the beginning of the second line.
+Another common use of escape sequences is to have quotation marks inside
+of strings. Since double quotes indicate the beginning and end of strings, you
+need to escape them with a backslash.
+System.out.println("She said \"Hello!\" to me.");
+8 Chapter 1 The way of the program
+\n newline
+\t tab
+\" double quote
+\\ backslash
+Table 1.1: Common escape sequences
+The result is:
+She said "Hello!" to me.
+</p>    
+  <li><a href="https://greenteapress.com/thinkjava6/thinkjava.pdf" target="_blank">More info here! <a/></li>
+  
+<section class="main-section" id="section_5">
+  <header>Formatting Code</header>    
+  <p><code>public class Goodbye { <br>
+public static void main(String[] args) {<br>
+System.out.print("Goodbye, ");<br>
+System.out.println("cruel world");<br>
+}<br>
+}<br>
+    <br>
+    Versus<br>
+    <br>
+public class Goodbye { public static void main(String[] args) <br>
+{ System.out.print("Goodbye, "); System.out.println<br>
+("cruel world");}}<br>
+    </code></p>  
+  <p>In Java programs, some spaces are required. For example, you need at least
+one space between words, so this program is not legal:
+publicclassGoodbye{
+publicstaticvoidmain(String[] args) {
+System.out.print("Goodbye, ");
+System.out.println("cruel world");
+}
+}
+But most other spaces are optional. For example, this program is legal:
+public class Goodbye {
+public static void main(String[] args) {
+System.out.print("Goodbye, ");
+System.out.println("cruel world");
+}
+}
+The newlines are optional, too. So we could just write:
+public class Goodbye { public static void main(String[] args)
+{ System.out.print("Goodbye, "); System.out.println</p>    
+  <li><a href="https://greenteapress.com/thinkjava6/thinkjava.pdf" target="_blank">More info here!</a></li>
+</section>
+</main>
+</body>
