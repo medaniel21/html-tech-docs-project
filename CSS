@@ -1,0 +1,41 @@
+@media only screen and (max-width: 800px){}
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100&display=swap');
+.main-body {
+	display: grid;
+  font-family: "Encode Sans SC", sans-serif;
+	grid-template-columns: minmax(300px , auto)1fr;
+	grid-gap: 20px;
+  background-color: #ECE8C4;
+}
+#navbar {
+  position: fixed;
+  height: 100%;
+  min-width: 300px;
+  width: 300px;
+  top: 0px;
+  left: 0px;
+  color: black;
+  background-color: #F5BF5A;
+  padding: 75px 0px;
+  text-decoration: none;
+
+}
+
+#navbar a {
+	display: block;
+	padding: 5px;
+	margin: 10px 0;
+	text-decoration: none;
+	color: black;
+}
+
+
+#main-doc {
+	grid-area: mainContent;
+}
+
+header {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
